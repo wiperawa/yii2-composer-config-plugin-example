@@ -1,0 +1,113 @@
+{
+    "name": "yiisoft/yii2-app-advanced",
+    "description": "Yii 2 Advanced Project Template",
+    "keywords": ["yii2", "framework", "advanced", "project template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.6.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
+        "vlucas/phpdotenv": "^5.1",
+        "yiisoft/composer-config-plugin": "^1.0@dev"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.1.0",
+        "yiisoft/yii2-gii": "~2.1.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        "codeception/codeception": "^4.0",
+        "codeception/module-asserts": "^1.0",
+        "codeception/module-yii2": "^1.0",
+        "codeception/module-filesystem": "^1.0",
+        "codeception/verify": "~0.5.0 || ~1.1.0",
+        "symfony/browser-kit": ">=2.7 <=4.2.4"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "extra": {
+        "config-plugin-output-dir": "build/configs",
+        "config-plugin": {
+            "constants": [
+                "common/config/constants-local.php"
+            ],
+            "params": [
+                "common/config/params.php",
+                "?common/config/params-local.php"
+            ],
+            "params_frontend": [
+                "$params",
+                "frontend/config/params.php",
+                "?frontend/config/params-local.php"
+            ],
+            "params_backend": [
+                "$params",
+                "backend/config/params.php",
+                "?backend/config/params-local.php"
+            ],
+            "params_console": [
+                "$params",
+                "console/config/params.php",
+                "?console/config/params-local.php"
+            ],
+            "common": [
+                "common/config/main.php",
+                "?common/config/main-local.php"
+            ],
+            "backend": [
+                "$common",
+                "backend/config/main.php",
+                "?backend/config/main-local.php"
+            ],
+            "console": [
+                "$common",
+                "console/config/main.php",
+                "?console/config/main-local.php"
+            ],
+            "frontend": [
+                "$common",
+                "frontend/config/main.php",
+                "?frontend/config/main-local.php"
+            ],
+            "test": [
+                "common/config/test.php",
+                "?common/config/test-local.php"
+            ],
+            "test-backend": [
+                "$test",
+                "backend/config/test.php",
+                "?backend/config/test-local.php"
+            ],
+            "test-console": [
+                "$test",
+                "console/config/test.php",
+                "?console/config/test-local.php"
+            ],
+            "test-frontend": [
+                "$test",
+                "frontend/config/test.php",
+                "?frontend/config/test-local.php"
+            ]
+        }
+    }
+}
